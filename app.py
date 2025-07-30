@@ -69,12 +69,6 @@ def generate_pdf():
     }
 
     rendered = render_template("template.html", data=data)
-    # pdf = pdfkit.from_string(rendered, False)
-
-    # response = make_response(pdf)
-    # response.headers["Content-Type"] = "application/pdf"
-    # response.headers["Content-Disposition"] = "inline; filename=resume.pdf"
-    # return response
     
     full_pdf = pdfkit.from_string(rendered, False)
 
@@ -92,7 +86,8 @@ def generate_pdf():
     # Return sliced PDF
     response = make_response(output_stream.read())
     response.headers["Content-Type"] = "application/pdf"
-    response.headers["Content-Disposition"] = "inline; filename=resume_one_page.pdf"
+    # response.headers["Content-Disposition"] = "inline; filename=resume_one_page.pdf"
+    response.headers["Content-Disposition"] = "attachment; filename=resume_one_page.pdf"
     return response
 
 if __name__ == "__main__":
