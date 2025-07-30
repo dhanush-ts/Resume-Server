@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ data.name }} - Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #000;
+      padding: 0;
+    }
+
+    .container {
+      margin: 0 auto;
+      background-color: #fff;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .header a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .contact {
+      font-size: 14px;
+      color: #333;
+      text-align: right;
+    }
+
+    .bullet {
+      margin-right: 5px;
+      color: #000;
+    }
+
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .section-title {
+      background-color: #e3eaf3;
+      padding: 6px 10px;
+      font-size: 15px;
+      font-weight: bold;
+      border-left: 4px solid #007acc;
+      margin-top: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .three-column {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .three-column li {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top;
+      margin-right: 5px;
+    }
+
+    h2 {
+      letter-spacing: 3px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .duration {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><a href="https://dhanush-dev.tech/">{{ data.name }}</a></h1>
+      <div class="contact">
+        <a href="{{ data.linkedin }}">LinkedIn</a> |
+        <a href="{{ data.github }}">GitHub</a> |
+        <a href="https://dhanush-dev.tech/">Portfolio</a> |
+        {{ data.email }} |
+        {{ data.phone }}
+      </div>
+    </div>
+
+    <h2 class="section-title">PROFILE SUMMARY</h2>
+    <p>{{ data.profile_summary }}</p>
+
+    <h2 class="section-title">FUNCTIONAL AREAS</h2>
+    <ul class="three-column">
+      {% for item in data.functional_areas %}
+        <li><span class="bullet">•</span>{{ item }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="section-title">TECHNICAL SKILLS</h2>
+    <ul>
+      {% for skill in data.technical_skills %}
+        <li>{{ skill|safe }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="section-title">PROJECTS</h2>
+
+    <div class="project">
+      <div class="project-header">
+        <span>{{ data.project1_title }}</span>
+        <span>{{ data.project1_duration }}</span>
+      </div>
+      <ul>
+        {% for point in data.project1_points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span>{{ data.project2_title }}</span>
+        <span>{{ data.project2_duration }}</span>
+      </div>
+      <ul>
+        {% for point in data.project2_points %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <h2 class="section-title">ACHIEVEMENTS</h2>
+    <ul>
+      {% for a in data.achievements %}
+        <li>{{ a }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="section-title">VOLUNTEER EXPERIENCE</h2>
+    <ul>
+      {% for v in data.volunteer_experience %}
+        <li>{{ v }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="section-title">EDUCATION</h2>
+    <p><strong>{{ data.education.degree }}</strong> – {{ data.education.duration }}</p>
+    <p>{{ data.education.institute }}</p>
+    <p>{{ data.education.roles }}</p>
+  </div>
+</body>
+</html>
