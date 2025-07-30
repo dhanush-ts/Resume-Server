@@ -79,8 +79,10 @@
       vertical-align: top;
       margin-right: 5px;
     }
-
+    
     .project-header {
+      display: flex;
+      justify-content: space-between;
       font-weight: bold;
       margin-top: 15px;
     }
@@ -88,7 +90,9 @@
     .duration {
       font-size: 15px;
       font-weight: bold;
+      text-align: right;
     }
+
   </style>
 </head>
 <body>
@@ -126,7 +130,7 @@
     <div class="project">
       <div class="project-header">
         <span>{{ data.project1_title }}</span>
-        <span>{{ data.project1_duration }}</span>
+        <span class="duration">{{ data.project1_duration }}</span>
       </div>
       <ul>
         {% for point in data.project1_points %}
@@ -138,7 +142,7 @@
     <div class="project">
       <div class="project-header">
         <span>{{ data.project2_title }}</span>
-        <span>{{ data.project2_duration }}</span>
+        <span class="duration">{{ data.project2_duration }}</span>
       </div>
       <ul>
         {% for point in data.project2_points %}
@@ -162,7 +166,7 @@
     </ul>
 
     <h2 class="section-title">EDUCATION</h2>
-    <p><strong>{{ data.education.degree }}</strong> – {{ data.education.duration }}</p>
+    <p><strong>{{ data.education.degree }}</strong> <span class="duration">{{ data.education.duration }}</span></p>
     <p>{{ data.education.institute }}</p>
     <p>{{ data.education.roles }}</p>
   </div>
