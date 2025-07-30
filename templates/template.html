@@ -34,7 +34,7 @@
     }
 
     .contact {
-      font-size: 14px;
+      font-size: 15px;
       color: #333;
       text-align: right;
     }
@@ -49,10 +49,17 @@
       text-decoration: none;
     }
 
+    .education-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+
     .section-title {
       background-color: #e3eaf3;
       padding: 6px 10px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: bold;
       border-left: 4px solid #007acc;
       margin-top: 20px;
@@ -109,7 +116,7 @@
     </div>
 
     <h2 class="section-title">PROFILE SUMMARY</h2>
-    <p>{{ data.profile_summary }}</p>
+    <p class="summary">{{ data.profile_summary }}</p>
 
     <h2 class="section-title">FUNCTIONAL AREAS</h2>
     <ul class="three-column">
@@ -166,7 +173,10 @@
     </ul>
 
     <h2 class="section-title">EDUCATION</h2>
-    <p><strong>{{ data.education.degree }}</strong> <span class="duration">{{ data.education.duration }}</span></p>
+    <div class="education-line">
+      <strong>{{ data.education.degree }}</strong>
+      <span class="duration">{{ data.education.duration }}</span>
+    </div>
     <p>{{ data.education.institute }}</p>
     <p>{{ data.education.roles }}</p>
   </div>
