@@ -1,38 +1,5 @@
-a = """```json
-{
-  "profile_summary": "Data Analyst with 2+ years of experience in analyzing data, building dashboards, and delivering actionable insights. Proficient in SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Excel. Adept at translating business needs into data questions and presenting findings to stakeholders. Seeking to leverage expertise in data analysis to contribute to data-driven decision-making at LumaMetrics.",
-  "functional_areas": [
-    "Data Analysis",
-    "Data Visualization",
-    "Business Intelligence",
-    "SQL Development",
-    "ETL Processes",
-    "Statistical Analysis"
-  ],
-  "technical_skills": [
-    "SQL (Joins, CTEs, Window Functions)",
-    "Python (Pandas, NumPy, Matplotlib, Seaborn)",
-    "Data Visualization (Tableau, Power BI)",
-    "Advanced Excel (Pivot Tables, Charts, Lookups, Power Query, Power Pivot)",
-    "ETL Processes"
-  ],
-  "project1_title": "Inventory Management System with QR Code Tracking",
-  "project1_duration": "12/2024 – 01/2025",
-  "project1_points": [
-    "Developed a system to track 1000+ products using QR scanning, improving inventory management efficiency.",
-    "Utilized data analysis techniques to identify trends in product movement and optimize stock levels.",
-    "Created reports and visualizations to provide insights into inventory performance.",
-    "Leveraged Excel for data analysis and reporting."
-  ],
-  "project2_title": "AI-Powered Smart Classroom Automation",
-  "project2_duration": "06/2024 – 12/2024",
-  "project2_points": [
-    "Automated attendance for 200+ students using InsightFace, saving 20+ hours/month and improving data accuracy.",
-    "Employed Python and machine learning libraries to develop and implement the automation system.",
-    "Designed and implemented a data pipeline to collect and process attendance data.",
-    "Contributed to improved classroom management through data-driven automation."
-  ]
-}
-```"""[8:-3]
-print(a)
-print(type(eval(a)))
+import json
+value = "\n{\n  \"name\": \"DHANUSH T S\",\n  \"email\": \"tsdhanush169@gmail.com\",\n  \"phone\": \"+91-7200281984\",\n  \"linkedin\": \"[https://www.linkedin.com/in/dhanush-t-s-734481271/](https://www.linkedin.com/in/dhanush-t-s-734481271/)\",\n  \"github\": \"[https://github.com/dhanush-ts](https://github.com/dhanush-ts)\",\n  \"profile_summary\": \"Data Scientist, Data Analyst, and Full Stack Developer with 2+ years of experience delivering data-driven applications and dashboards. Expertise in leveraging AI and automation to improve process efficiency. Proficient in Python, Next.js, React.js, and Django for building scalable data solutions.\",\n  \"functional_areas\": [\"Machine Learning\", \"Data Analysis\", \"Full Stack Development\", \"Data Visualization\", \"Automation\", \"AI Development\"],\n  \"technical_skills\": [\"Python\", \"Next.js\", \"React.js\", \"Django\", \"SQL\", \"Machine Learning Algorithms\", \"Data Visualization (Tableau, Power BI)\", \"Data Analysis\", \"Statistical Modeling\", \"Deep Learning\", \"Natural Language Processing (NLP)\", \"Cloud Computing (AWS, Azure, GCP)\", \"Git\", \"Docker\", \"REST APIs\", \"Excel (Pivot Tables, Charts, Lookups, Power Query, Power Pivot)\"],\n  \"project1_title\": \"Inventory Management System with QR Code Tracking\",\n  \"project1_duration\": \"12/2024 \u2013 01/2025\",\n  \"project1_points\": [\"Developed a QR code-based inventory tracking system to monitor over 1000 products across multiple zones.\", \"Implemented data analysis techniques to optimize inventory levels and reduce waste.\", \"Utilized Python and a database to store and manage inventory data.\", \"Designed user-friendly interfaces for efficient inventory management.\"],\n  \"project2_title\": \"AI-Powered Smart Classroom Automation [Web Application & ML]\",\n  \"project2_duration\": \"06/2024 \u2013 12/2024\",\n  \"project2_points\": [\"Developed an AI-powered attendance system using InsightFace, automating attendance for 200+ students and saving 20+ hours per month.\", \"Implemented machine learning algorithms for facial recognition and attendance tracking.\", \"Built a web application using React.js and Django to manage student data and attendance records.\", \"Integrated the system with existing classroom infrastructure for seamless automation.\"],\n  \"achievements\": [\n    \"\ud83c\udfc6 Winner, Smart India Hackathon (National Level) \u2013 \u20b91,00,000 prize, Top 5 among 500+ teams\",\n    \"\ud83e\udd47 Winner, HackMeggedon at REC \u2013 \u20b910,000 prize, out of 300+ teams\",\n    \"\ud83e\udd47 Winner, CyberShield Hackathon \u2013 $330 prize, competed with 50+ elite teams\",\n    \"\ud83e\udd47 Winner, Codeathon 2.0 \u2013 \u20b910,000 prize, ranked 1st among 50+ colleges\",\n    \"\ud83e\udd47 Winner, Park College Codeathon \u2013 \u20b91,500 prize, from 600+ participants\",\n    \"\ud83e\udd47 Winner, Conociothon \u2013 \u20b91,000 prize, 1st among 100+ teams\",\n    \"\ud83c\udfc5 5+ additional coding competitions won in state-level symposiums\"\n  ],\n  \"volunteer_experience\": [\n    \"Facilitated 100+ students' entry into the data field as Chennai CoE volunteer (since 2023)\",\n    \"Created 50+ LinkedIn posts on ML & analytics, reaching 30,000+ impressions\",\n    \"Mentored 30+ mentees via Topmate with 4.9\u2605 avg. feedback rating for career support\"\n  ],\n  \"education\": {\n    \"degree\": \"Bachelor of Technology [B.Tech] in Artificial Intelligence and Data Science\",\n    \"duration\": \"08/2023 \u2013 Present\",\n    \"institute\": \"Rajalakshmi Engineering College\",\n    \"roles\": \"Tech Associate at DEVS Club, Tech-Ops at GDG; 3+ events coordinated; 2 technical talks delivered\"\n  }\n}\n"
+
+data = json.loads(value.strip())
+print(data)
