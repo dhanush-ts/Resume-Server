@@ -107,9 +107,9 @@ def generate_pdf():
 
     if not data:
         return {"error": "Invalid or missing JSON"}, 400
-
+    print(data)
     # ✅ Step 2: Render HTML with Jinja2
-    rendered = render_template("template.html", data=data["data"])
+    rendered = render_template("template.html", data=data)
 
     # ✅ Step 3: Generate full PDF
     full_pdf = pdfkit.from_string(rendered, False)
