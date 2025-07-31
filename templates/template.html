@@ -75,16 +75,16 @@
     }
 
     .three-column {
+      column-count: 3;
+      column-gap: 20px;
       list-style-type: disc;
       padding-left: 20px;
       margin: 10px 0;
     }
 
     .three-column li {
-      display: inline-block;
-      width: 30%;
-      vertical-align: top;
-      margin-right: 5px;
+      break-inside: avoid;
+      margin-bottom: 8px;
     }
     
     .project-header {
@@ -122,9 +122,10 @@
     <h2 class="section-title">FUNCTIONAL AREAS</h2>
     <ul class="three-column">
       {% for item in data.functional_areas %}
-        <li><span class="bullet">•</span>{{ item }}</li>
+        <li>{{ item }}</li>
       {% endfor %}
     </ul>
+
 
     <h2 class="section-title">TECHNICAL SKILLS</h2>
     <ul>
