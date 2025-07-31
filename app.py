@@ -13,8 +13,8 @@ def generate_pdf():
 
     if not data:
         return {"error": "Invalid or missing JSON"}, 400
-    # parsed_dict = json.loads(data[:-1].strip())
-    parsed_dict = data
+    parsed_dict = json.loads(data[:-1].strip())
+    # parsed_dict = data
     # ✅ Step 2: Render HTML with Jinja2
     rendered = render_template("template.html", data=parsed_dict)
 
